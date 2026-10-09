@@ -12,6 +12,7 @@ class ZeroTextAssertionTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+        self::assertSame('hello', $response->getContent());
 
         $this->expectException(AssertionFailedError::class);
 
